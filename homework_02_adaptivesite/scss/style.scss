@@ -23,6 +23,7 @@
 }
 .main-wrapper {
    display: flex;
+   position: relative;
 }
 .aside {
    flex: 0 0 240px;
@@ -40,6 +41,13 @@
       color: #000;
    }
 }
+#openPanel {
+   position: absolute;
+   top: -20px;
+   left: -10px;
+   font-size: 20px;
+   display: none;
+}
 .main {
    flex: 0 1 auto;
    width: 100%;
@@ -52,6 +60,41 @@
 .page-descr {
    margin-bottom: 20px;
 }
+.page {
+   &__top {
+      display: flex;
+      justify-content: space-between;
+   }
+
+   &__header {
+   }
+
+   &__head {
+      font-size: 22px;
+      font-weight: bold;
+      margin-bottom: 10px;
+   }
+
+   &__descr {
+      margin-bottom: 20px;
+   }
+
+   &__theme {
+      display: flex;
+      text-align: right;
+   }
+
+   &__switch {
+      font-size: 20px;
+      padding: 10px;
+      height: fit-content;
+      &-dark {
+         background-color: #333;
+         color: #fff;
+      }
+   }
+}
+
 .categories {
    display: flex;
    justify-content: space-between;
@@ -132,6 +175,19 @@
    &__contacts {
       display: flex;
       justify-content: space-between;
+   }
+}
+
+.theme-dark {
+   background-color: #333;
+   & .main {
+      color: #fff;
+   }
+   & .header {
+      background-color: purple;
+   }
+   & .card__button {
+      background-color: #333;
    }
 }
 

@@ -18,7 +18,18 @@
 }
 
 @media (max-width: 520px) {
+   .page-head {
+      margin-top: 10px;
+   }
    .aside {
-      display: none;
+      position: absolute;
+      transform: translate(-110%, 0);
+      transition: all 0.3s;
+      &_show {
+         transform: translate(-6%, 0);
+      }
+   }
+   #openPanel {
+      display: block;
    }
 }
