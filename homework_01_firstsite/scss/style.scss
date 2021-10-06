@@ -1,1 +1,133 @@
 @import "_header";
+
+.container {
+   max-width: 1260px;
+   margin: auto;
+   padding: 0 15px;
+}
+.header {
+   background-color: green;
+   color: #fff;
+   padding: 15px;
+   margin-bottom: 20px;
+
+   &__brand {
+      p {
+         font-size: 18px;
+         font-weight: bold;
+      }
+   }
+}
+.main-wrapper {
+   display: flex;
+}
+.aside {
+   flex: 0 0 250px;
+   padding: 15px;
+   background-color: #f5f5f5;
+   &__head {
+      font-size: 16px;
+      font-weight: bold;
+      margin: 5px;
+   }
+
+   &__item-wrap {
+      padding: 2px 0 2px 15px;
+      color: #000;
+   }
+}
+.main {
+   flex: 0 1 auto;
+   width: 100%;
+   padding: 20px 0 20px 20px;
+}
+.page-head {
+   font-size: 20px;
+   font-weight: bold;
+   margin-bottom: 10px;
+}
+.page-descr {
+   margin-bottom: 20px;
+}
+.categories {
+   display: flex;
+   justify-content: space-between;
+   &__item {
+      flex: 0 1 49%;
+      background-color: #f5f5f5;
+      padding: 15px;
+   }
+
+   &__link {
+      color: blue;
+      text-decoration: underline;
+      line-height: 30px;
+   }
+
+   &__description {
+      color: #777;
+   }
+}
+.popularity {
+   &__head {
+      font-size: 18px;
+      font-weight: bold;
+      margin: 20px 0;
+   }
+
+   &__items {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+   }
+
+   &__card {
+      flex: 0 0 32%;
+      background-color: #f5f5f5;
+      margin-bottom: 2%;
+      padding: 10px;
+   }
+}
+.popularity {
+   &__card {
+   }
+}
+.card {
+   &__wrapper {
+      display: flex;
+      align-items: center;
+   }
+
+   &__image {
+   }
+
+   &__info {
+      margin-left: 15px;
+   }
+
+   &__link {
+      color: blue;
+      text-decoration: underline;
+      margin-bottom: 5px;
+   }
+
+   &__button {
+      background-color: #d6d6d6;
+      padding: 5px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      &:hover {
+         background-color: #7c7c7c;
+      }
+   }
+}
+
+.footer {
+   padding: 15px;
+   background-color: #f5f5f5;
+   margin-top: 20px;
+   &__contacts {
+      display: flex;
+      justify-content: space-between;
+   }
+}
