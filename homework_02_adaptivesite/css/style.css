@@ -271,6 +271,19 @@ h6 {
   padding: 10px;
 }
 
+.card {
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+
+.card:hover {
+  background-color: #333;
+}
+
+.card:hover .card__link {
+  color: #fff;
+}
+
 .card__wrapper {
   display: -webkit-box;
   display: -ms-flexbox;
