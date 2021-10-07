@@ -16,6 +16,7 @@ $bgDark: #333;
    color: #fff;
    padding: 15px;
    margin-bottom: 20px;
+   position: relative;
 
    &__brand {
       p {
@@ -193,6 +194,33 @@ $bgDark: #333;
    }
    & .card__button {
       background-color: $bgDark;
+   }
+}
+
+.header {
+   &__loader-wrap {
+      position: absolute;
+      top: 50%;
+      transform: translate(0, -50%);
+      right: 5%;
+   }
+}
+
+.header__loader {
+   width: 20px;
+   height: 20px;
+   border-radius: 50%;
+   border-bottom: 3px dotted #fff;
+   border-right: 3px dotted #fff;
+   animation: preloader 1s linear infinite;
+}
+
+@keyframes preloader {
+   0% {
+      transform: rotate(0deg);
+   }
+   100% {
+      transform: rotate(360deg);
    }
 }
 
