@@ -1,72 +1,56 @@
-// 1. Написать скрипт, предлогающий пользователю ввести две строки через запятую. Вывести сообщение true, если вторая строка содержится в первый, в противном случае false, регистр при проверке не учитывать.
+// 1. На вход поступает массив, вывести массив, удалив неуникальные значения.
 
-const quest = prompt('Введите две строки через запятую', '');
-const res1 = quest.match(/[^,]*/i); // Находим все до запятой
-const res2 = quest.match(/[^,]*$/i);// После запятой
-alert(res1.toString() === res2.toString());
+// const firstArr = [1, 'str', 'str', 2, 3, 3, 3, 4, 5, 5, 6];
+// const uniqueArr = Array.from(new Set(firstArr));
+// console.log(uniqueArr);
 
-// ---------------------------------------------------
+// 2. На вход поступает массив, реверсировать значения (подобно методу reverse) метод reverse не использовать.
 
-// --- 2. Пользователь вводит строку, затем число (кол-во символов). Функция усекает строку до кол-ва символов и добавляет многоточие. ---
+// const newArr = [1, 2, 3, 4, 5, 'string'];
+// const reverseArr = newArr.map(newArr.pop, [...newArr]);
+// console.log(reverseArr);
 
-const commonStr = prompt('Введите строку, затем число', '');
-const commonRgx = commonStr.replace(/\D/gi, '');
-alert(`${commonRgx}...`);
+// 3. На вход поступает массив, содержащий массивы, в которых хранится два элемента. Преобразовать массив в объект, где ключами являются нулевой индекс вложенныхых массивов, а значениями являются элементы с индексом один.
 
-// --- 3. Заменить дату и время 12/03/2020 12-30 на 12.03.2020 12:30 ---
-const date = document.querySelector('.date').innerHTML;
-const time = document.querySelector('.time').innerHTML;
-const resultDate = (date.replace(/[/]/g, "."));
-const resultTime = (time.replace(/[-]/g, ":"));
-document.querySelector('.date').innerHTML = resultDate;
-document.querySelector('.time').innerHTML = resultTime;
+const entryArr = [
+   ['name', 'Alex'],
+   ['last name', 'Britov'],
+   ['sex', 'Male']
+];
 
-// ------------------------------------------------------
+const entryArrToObj = Object.fromEntries(entryArr);
 
-// --- 4. Написать функцию, валидирующую ФИО из кирилличиских символов (считать, что отчество может оканчиваться только на "вна" или "вич" или может отсутствовать) ---
+Object.entries(entryArrToObj).forEach(([key, value]) =>
+   console.log(key, value)
+);
 
-const fio = prompt('Введите ваше ФИО', '');
-const fioValidate = /^[а-яА-яёЁ]+ [а-яА-яёЁ]+( [а-яА-яёЁ]*)?$/;
-alert(fioValidate.test(fio));
+// 4. На вход поступает объект, вывести сумму числовых свойств объекта.
 
+const numObj = {
+   first: 10,
+   second: 20,
+   third: 30
+};
 
-// -----------------------------------------------------
+const numObjToArray = Object.values(numObj);
+const sumNumbers = numObjToArray.reduce((accum, elem) => accum + elem, 0);
+console.log(sumNumbers);
 
-// --- 5. На вход дана строка в CamalCase, преобразовать строку в snake_case ---
+// 5. На вход поступает массив с числами, вывести среднее арифметическое элементов массива.
 
-const camalCase = prompt('Введите строку в CamalCase', '');
-const camalRgx = (camalCase.match(/([A-Z])([a-z]+)/gm)).toString();
-const toLower = camalRgx.toLowerCase();
-alert(toLower.replace(/[,]/g, '_'));
+const startArr = [1, 2, 3, 7, 6, 7, 8, 9];
+const summArr = startArr.reduce((accum, elem) => accum + elem, 0);
+const result = summArr / startArr.length;
+console.log(result);
 
-// ------------------------------------------------------
+// 6. Создать функцию-конструктор для объекта "калькулятор", объект должен иметь поле, хранящее текущее значение и методы сложения, вычитания, умножения и деления, принимающие число и манипулирующий свойством значения в соответствии с назначением метода, а так же функцию, сбрасывающую значение в ноль.
 
-// --- 6. На вход даётся многострочная строка, найти и вернуть через alert все html комментарии ---
-const body = document.documentElement.innerHTML;
-const regexp = /<!--.*?-->/gm;
-alert(body.match(regexp));
-
-// -----------------------------------------------------
-
-// --- 7. На вход дана строка, вернуть через alert все числа (десятичные разделяются сиволом ".") ---
-
-const customNumbers = prompt('Введите числа в том числе десятичные', '');
-alert(customNumbers.match(/\d+\.\d+/g));
-
-// ------------------------------------------------------
-
-// --- 8. Валидация введённого значения. Вводится идентификатор документа. Идентификатор должен состоять из четырёх частей по четыре символа,разделённых или не разделённых знаком "-". Допускаются только символы латинского алфавита и числа. Вывести через alert "ведётся поиск", при соответствии введённого значения, или "неверный илентификатор", при несоответствии. При несоответствии снова вывести форму для ввода строки. ---
-
-while (true) {
-	const ident = prompt('Введите занчение идентификатора документа');
-	const identValid = /^\w{4}-\w{4}-\w{4}-\w{4}$/;
-
-	if (identValid.test(ident)) {
-		alert('ведется поиск...')
-		break;
-	}
-
-	alert('Неверное значение. Введите еще раз');
-
+function Calculator(val) {
+   this.val = val;
+   this.methods = {
+      "-": (a, b) => a - b,
+      "+": (a, b) => a + b,
+      "*": (a, b) => a * b,
+      "/": (a, b) => a / b
+   };
 }
-
