@@ -1,0 +1,38 @@
+html,
+body {
+  height: 100%;
+  overflow-x: hidden;
+}
+#root {
+  height: 100%;
+}
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
+}
+.main {
+  display: flex;
+  flex: 1 0 auto;
+}
+
+.sidebar__wrapper {
+  width: 200px;
+  background-color: #777;
+  flex: 0 0 auto;
+}
+
+.sidebar {
+  height: 100%;
+  color: #fff;
+  padding: 15px;
+}
+
+.content {
+  flex: 1 0 auto;
+  padding: 15px;
+}
+
+.footer {
+  flex: 0 0 auto;
+}
