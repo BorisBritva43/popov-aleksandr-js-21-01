@@ -15,13 +15,44 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
+    "eslint": "eslint ./src",
+    "eslintfix": "eslint ./src --fix",
     "eject": "react-scripts eject"
   },
   "eslintConfig": {
     "extends": [
-      "react-app",
-      "react-app/jest"
-    ]
+      "airbnb",
+      "airbnb-typescript"
+    ],
+    "plugins": [
+      "@typescript-eslint/eslint-plugin"
+    ],
+    "parser": "@typescript-eslint/parser",
+    "parserOptions": {
+      "project": "./tsconfig.json"
+    },
+    "rules": {
+      "react/prefer-stateless-function": "off",
+      "react/no-array-index-key": "off",
+      "react/destructuring-assignment": "off",
+      "import/prefer-default-export": "off",
+      "typescript-eslint/quotes": 0,
+      "typescript-eslint/indent": "off",
+      "typescript-eslint/comma-dangle": "off",
+      "eol-last": "off",
+      "react/jsx-indent": "off",
+      "operator-linebreak": "off",
+      "implicit-arrow-linebreak": "off",
+      "react/jsx-curly-newline": "off",
+      "typescript-eslint/semi": "off",
+      "no-multiple-empty-lines": "off",
+      "max-len": [
+        1,
+        120
+      ],
+      "quotes": "off",
+      "linebreak-style": 0
+    }
   },
   "browserslist": {
     "production": [
@@ -34,5 +65,16 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "@types/react": "^17.0.33",
+    "@types/react-dom": "^17.0.10",
+    "@typescript-eslint/eslint-plugin": "^5.2.0",
+    "@typescript-eslint/parser": "^5.2.0",
+    "eslint-config-airbnb": "^18.2.1",
+    "eslint-config-airbnb-typescript": "^14.0.1",
+    "eslint-plugin-babel": "^5.3.1",
+    "prop-types": "^15.7.2",
+    "typescript": "^4.4.4"
   }
 }

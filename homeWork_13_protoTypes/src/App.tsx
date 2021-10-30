@@ -1,8 +1,9 @@
+/* eslint-disable */
 import React from 'react';
 import './App.css';
 import { Header } from './components/header/Header';
 import { Sidebar } from './components/sidebar/Sidebar';
-import { Comments } from './forms/comments/Comments';
+import Comments from './forms/comments/Comments';
 import { Footer } from './components/footer/Footer';
 
 class App extends React.Component {
