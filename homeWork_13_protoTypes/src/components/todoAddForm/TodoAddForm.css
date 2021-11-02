@@ -1,0 +1,52 @@
+.todo {
+   display: flex;
+   justify-content: space-between;
+   max-width: 80%;
+   margin: auto;
+}
+.todo p {
+   margin: 0;
+}
+
+.todo__item {
+   display: flex;
+   justify-content: space-between;
+   padding: 10px;
+   margin-bottom: 10px;
+   border: 1px solid #c7c5c5;
+   background: #fff;
+}
+
+.todo__list {
+   list-style-type: none;
+   width: 80%;
+   margin: 20px auto;
+   padding: 0;
+}
+
+.todo__label {
+   max-width: 85%;
+}
+
+.todo__buttons {
+   padding-left: 20px;
+}
+
+.todo__form {
+   flex: 0 1 50%;
+}
+
+.todo__input {
+   width: 75%;
+   margin-right: 10px;
+   padding: 5px;
+}
+
+.todo__btn {
+   padding: 5px;
+}
+
+.todo__star,
+.todo__trash {
+   margin-right: 5px;
+}

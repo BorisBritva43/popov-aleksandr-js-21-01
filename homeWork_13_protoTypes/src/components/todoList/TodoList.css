@@ -1,0 +1,12 @@
+.todo__list .important .todo__star {
+   color: green;
+}
+
+.todo__item.important .todo__label {
+   color: #a5a3a3;
+   text-decoration: line-through;
+}
+
+.todo__list .onLike .fa-heart {
+   color: red;
+}
