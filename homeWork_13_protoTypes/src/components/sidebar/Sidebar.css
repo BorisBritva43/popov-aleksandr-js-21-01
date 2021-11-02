@@ -1,0 +1,16 @@
+.sidebar__wrapper {
+   width: 200px;
+   background-color: #607d8b;
+   flex: 0 0 auto;
+}
+
+.sidebar {
+   height: 100%;
+   color: #fff;
+   padding: 15px;
+}
+.sidebar li {
+   list-style-type: none;
+   padding: 10px 0;
+   border-bottom: 1px solid #999;
+}
