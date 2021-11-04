@@ -1,7 +1,15 @@
 .header {
    min-height: 50px;
-   background-color: #555;
+   background: #7ec7b8;
    color: #fff;
    font-size: 30px;
    padding: 15px;
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+}
+
+.header_dark {
+   background-color: #333;
+   color: #fff;
 }

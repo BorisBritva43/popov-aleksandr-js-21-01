@@ -2,9 +2,9 @@
    display: flex;
    justify-content: space-between;
    align-items: center;
-   background-color: #555;
+   background: #7ec7b8;
    padding: 15px;
-   color: #fff;
+   color: #333;
 }
 .footer__menu {
    flex: 0 0 auto;
@@ -14,4 +14,9 @@
 }
 .footer__copy {
    flex: 0 1 auto;
+}
+
+.footer_dark {
+   background-color: #333;
+   color: #fff;
 }

@@ -1,15 +1,26 @@
 import React from "react";
 import './Comments.css';
-import { apiResponse } from '../../api-mock/api';
+import { getCommentList } from '../../api-mock/dumMyApi';
 import { Comment } from '../../components/comment/Comment';
 import ComponentWithHelper from "../../components/wrappers/ComponentWithHelper";
 import Post from "../../components/post/Post";
+import { ThemeContextConsumer } from "../../components/contexts/ThemeContext";
 
 export class Comments extends React.Component {
    constructor(props) {
       super(props);
-      this.state = { showComments: true };
+      this.state = { comments: [], showComments: true };
       this.showCommentsButton = this.showCommentsButton.bind(this);
+      this.loadComments = this.loadComments.bind(this);
+      this.loadComments = this.loadComments.bind(this);
+   }
+
+   componentDidMount(): void {
+      this.loadComments(0, 10);
+   }
+
+   loadComments(page, limit) {
+      getCommentList(page, limit, (resp) => this.setState({ comments: resp }));
    }
 
    showCommentsButton() {
@@ -18,35 +29,43 @@ export class Comments extends React.Component {
 
    render() {
       return (
-         <div className="comments">
-            <div className="comments__post">
-               <Post text="Какой то пост"></Post>
-            </div>
+         <ThemeContextConsumer>
+            {
+               (context) => (
+                  <div className="comments">
+                     <div className="comments__post">
+                        <Post text="Какой то пост"></Post>
+                     </div>
 
-            <div className="comments__show-btn"
-               onClick={this.showCommentsButton}
-            >{this.state.showComments
-               ? 'Скрыть комментарии'
-               : 'Показать комментарии'}</div>
+                     <div className="comments__show-btn"
+                        onClick={this.showCommentsButton}
+                     >{this.state.showComments
+                        ? 'Скрыть комментарии'
+                        : 'Показать комментарии'}</div>
 
-            {this.state.showComments && (
-               <div className="comments__comment">
-                  {apiResponse.status === 'ok' ?
-                     apiResponse.result.map((elem, index) =>
-                        <ComponentWithHelper comment="Это комментарий" key={index}>
-                           <Comment
-                              name={elem.name}
-                              text={elem.text}
-                              key={index}
-                           />
-                        </ComponentWithHelper>
-                     ) :
-                     'При загрузке произошла ошибка'
-                  }
-               </div>
-            )}
+                     {this.state.showComments && (
+                        <div className="comments__comment">
+                           {this.state.comments.length !== 0 ?
+                              this.state.comments.map((elem, index) =>
+                                 <ComponentWithHelper comment={elem.id} key={index}>
+                                    <Comment
+                                       name={elem.owner?.firstName}
+                                       text={elem.message}
+                                       className={context.darkTheme && 'comment_dark'}
+                                       key={index}
+                                    />
+                                 </ComponentWithHelper>
+                              ) :
+                              'При загрузке произошла ошибка'
+                           }
+                        </div>
+                     )}
 
-         </div>
+                  </div>
+               )
+
+            }
+         </ThemeContextConsumer>
 
       )
    }

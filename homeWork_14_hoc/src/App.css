@@ -3,7 +3,8 @@ body {
   height: 100%;
   overflow-x: hidden;
 }
-#root {
+#root,
+.App {
   height: 100%;
 }
 .wrapper {
@@ -14,18 +15,7 @@ body {
 .main {
   display: flex;
   flex: 1 0 auto;
-}
-
-.sidebar__wrapper {
-  width: 200px;
-  background-color: #777;
-  flex: 0 0 auto;
-}
-
-.sidebar {
-  height: 100%;
-  color: #fff;
-  padding: 15px;
+  overflow: hidden;
 }
 
 .content {

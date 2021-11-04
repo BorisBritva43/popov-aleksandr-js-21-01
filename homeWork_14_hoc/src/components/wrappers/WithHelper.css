@@ -1,10 +1,11 @@
 .component-with-helper {
    position: relative;
+   transition: 0.5s;
 }
 
 .component-with-helper__helper {
    position: absolute;
-   top: -1, 5em;
+   top: 1, 5em;
    background-color: #fff;
    border: 1px solid black;
    border-radius: 5px;
