@@ -1,9 +1,8 @@
 .comment {
-   border: 1px solid black;
+   border-bottom: 1px solid black;
    padding: 10px;
-   border-radius: 5px;
    margin-bottom: 15px;
-   background: #7ec7b8;
+   cursor: pointer;
 }
 
 .comment__name {
@@ -13,4 +12,22 @@
 .comment_dark {
    background-color: #333;
    color: #fff;
+}
+
+.comment__wrapper {
+   display: flex;
+}
+
+.comment__content {
+   margin-left: 15px;
+}
+
+.comments__comment {
+   display: flex;
+   flex-wrap: wrap;
+   justify-content: space-around;
+}
+
+.comments__comment .component-with-helper {
+   width: 45%;
 }

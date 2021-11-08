@@ -40,8 +40,8 @@ export class Comments extends React.Component {
                      <div className="comments__show-btn"
                         onClick={this.showCommentsButton}
                      >{this.state.showComments
-                        ? 'Скрыть комментарии'
-                        : 'Показать комментарии'}</div>
+                        ? 'Скрыть'
+                        : 'Показать'}</div>
 
                      {this.state.showComments && (
                         <div className="comments__comment">
@@ -49,8 +49,11 @@ export class Comments extends React.Component {
                               this.state.comments.map((elem, index) =>
                                  <ComponentWithHelper comment={elem.id} key={index}>
                                     <Comment
-                                       name={elem.owner?.firstName}
-                                       text={elem.message}
+                                       id={elem.id}
+                                       name={elem.firstName}
+                                       title={elem.title}
+                                       lastName={elem.lastName}
+                                       picture={elem.picture}
                                        className={context.darkTheme && 'comment_dark'}
                                        key={index}
                                     />

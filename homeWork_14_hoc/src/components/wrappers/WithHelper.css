@@ -1,6 +1,5 @@
 .component-with-helper {
    position: relative;
-   transition: 0.5s;
 }
 
 .component-with-helper__helper {
