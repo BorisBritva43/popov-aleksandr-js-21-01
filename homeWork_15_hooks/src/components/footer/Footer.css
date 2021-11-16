@@ -1,0 +1,22 @@
+.footer {
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+   background: #7ec7b8;
+   padding: 15px;
+   color: #333;
+}
+.footer__menu {
+   flex: 0 0 auto;
+}
+.footer__menu li {
+   list-style-type: none;
+}
+.footer__copy {
+   flex: 0 1 auto;
+}
+
+.footer_dark {
+   background-color: #333;
+   color: #fff;
+}
