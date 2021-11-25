@@ -1,0 +1,23 @@
+.sidebar {
+   min-height: 100%;
+   color: #333;
+   padding: 15px;
+   width: 200px;
+   background: #7ec7b8;
+   flex: 0 0 auto;
+}
+.sidebar li {
+   list-style-type: none;
+   padding: 10px 0;
+   border-bottom: 1px solid #999;
+}
+
+.sidebar a {
+   color: #fff;
+   text-decoration: none;
+}
+
+.sidebar_dark {
+   background-color: #333;
+   color: #fff;
+}
