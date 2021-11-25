@@ -1,0 +1,15 @@
+.comments__post {
+   /* min-height: 150px; */
+}
+.post {
+   margin-bottom: 20px;
+}
+.comments__show-btn {
+   margin-bottom: 15px;
+   padding: 10px 5px;
+   display: inline-block;
+   background: #acf1e3;
+   color: #171616;
+   border-radius: 5px;
+   cursor: pointer;
+}

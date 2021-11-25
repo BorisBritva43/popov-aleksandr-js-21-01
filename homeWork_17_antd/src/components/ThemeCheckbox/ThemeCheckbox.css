@@ -1,0 +1,7 @@
+.dark-theme .header,
+.dark-theme .sidebar,
+.dark-theme .footer,
+.dark-theme .comment {
+   background-color: #333;
+   color: #fff;
+}

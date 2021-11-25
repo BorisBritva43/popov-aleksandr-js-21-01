@@ -1,0 +1,28 @@
+html,
+body {
+  height: 100%;
+  overflow-x: hidden;
+}
+#root,
+.App {
+  height: 100%;
+}
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
+}
+.main {
+  display: flex;
+  flex: 1 0 auto;
+  overflow: hidden;
+}
+
+.content {
+  flex: 1 0 80%;
+  padding: 15px;
+}
+
+.footer {
+  flex: 0 0 auto;
+}

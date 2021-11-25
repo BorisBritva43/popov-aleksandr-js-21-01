@@ -1,0 +1,15 @@
+.user-form {
+   display: flex;
+   justify-content: center;
+   position: relative;
+   padding: 30px;
+}
+.user-form__left {
+   margin-right: 50px;
+}
+.user-form__btn {
+   position: absolute;
+   top: 0;
+   left: 0;
+   cursor: pointer;
+}
